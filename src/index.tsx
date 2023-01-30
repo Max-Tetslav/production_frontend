@@ -1,12 +1,4 @@
 import { render } from "react-dom";
-import { Counter } from "./components/Counter";
-import { someFunc } from "./test";
+import { App } from "./components/App";
 
-someFunc(1);
-
-render(
-  <div>
-    <Counter />
-  </div>,
-  document.getElementById("root")
-);
+render(<App />, document.getElementById("root"));

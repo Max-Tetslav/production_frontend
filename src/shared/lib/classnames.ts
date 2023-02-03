@@ -4,7 +4,10 @@ const classnames = (...classes: Array<string | TModsList>): string => {
   const list: string[] = [];
 
   classes.forEach((item) => {
-    if (typeof item !== "string" && typeof item !== "object" && item !== null) {
+    if (
+      (typeof item !== "string" && typeof item !== "object") ||
+      item === null
+    ) {
       return;
     }
 

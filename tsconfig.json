@@ -9,6 +9,10 @@
     "moduleResolution": "node", // node или classic в 99% используется node
     // позволяет работать с пакетами которые используют commonjs
     // как с обычными пакетами с помощью import, (require() module.exports) = commonjs
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    },
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
     // Если какая-либо библиотека не имеет default import,

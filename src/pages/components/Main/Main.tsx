@@ -1,6 +1,7 @@
 import React, { FC } from "react";
-import useTheme from "../../shared/hooks/useTheme";
-import { cn } from "../../shared/utils/classnames";
+
+import { cn } from "shared/lib/classnames";
+import useTheme from "shared/lib/useTheme";
 import cls from "./Main.module.scss";
 
 const Main: FC = () => {
@@ -14,9 +15,7 @@ const Main: FC = () => {
           cls.btn,
           cls.files,
           { [cls.redBg]: true, [cls.bigFont]: false },
-          cls.againg,
-          undefined,
-          null
+          cls.againg
         )}
         onClick={toggleTheme}
       >

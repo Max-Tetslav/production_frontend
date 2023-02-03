@@ -1,22 +1,10 @@
-import { createContext, FC, useCallback, useState } from "react";
-
-export enum Themes {
-  NORMAL = "normal",
-  DARK = "dark",
-}
-
-export interface IThemeContextProps {
-  theme?: Themes;
-  toggleTheme?: VoidFunction;
-}
-
-export const ThemeContext = createContext<IThemeContextProps>({});
-
-export const LOCAL_STORAGE_THEME_KEY = "theme";
-
-export const DEFAULT_THEME =
-  (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Themes | undefined) ||
-  Themes.NORMAL;
+import { FC, useState, useCallback } from "react";
+import {
+  Themes,
+  DEFAULT_THEME,
+  LOCAL_STORAGE_THEME_KEY,
+  ThemeContext,
+} from "../../shared/lib/ThemeContext";
 
 export const ThemeProvider: FC = ({ children }) => {
   const [theme, setTheme] = useState<Themes>(DEFAULT_THEME);
@@ -42,3 +30,5 @@ export const ThemeProvider: FC = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
+
+export default ThemeProvider;

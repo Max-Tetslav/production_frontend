@@ -1,17 +1,15 @@
-import { Suspense, useCallback, useContext, useState } from "react";
+import { Suspense } from "react";
 import { Link, Route, Routes } from "react-router-dom";
-
-import Main from "./pages/Main";
-import About from "./pages/About";
 import "./styles/index.scss";
-import { ThemeContext } from "./shared/contexts/ThemeContext";
-import useTheme from "./shared/hooks/useTheme";
 
-export const App = () => {
+import { About, Main } from "pages";
+import useTheme from "shared/lib/useTheme";
+
+const App = () => {
   const { theme } = useTheme();
 
   return (
-    <div className={`app  ${theme}`}>
+    <div className={`app ${theme}`}>
       <Link to="/">TO MAIN PAGE</Link>
       <Link to="/about">TO ABOUT PAGE</Link>
       <Suspense fallback={<div>Loading...</div>}>
@@ -23,3 +21,5 @@ export const App = () => {
     </div>
   );
 };
+
+export default App;

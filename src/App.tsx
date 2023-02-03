@@ -8,11 +8,10 @@ import { ThemeContext } from "./shared/contexts/ThemeContext";
 import useTheme from "./shared/hooks/useTheme";
 
 export const App = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className={`app  ${theme}`}>
-      <button onClick={toggleTheme}>Change THEME</button>
       <Link to="/">TO MAIN PAGE</Link>
       <Link to="/about">TO ABOUT PAGE</Link>
       <Suspense fallback={<div>Loading...</div>}>

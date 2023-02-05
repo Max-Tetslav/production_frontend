@@ -4,7 +4,7 @@ import {
   DEFAULT_THEME,
   LOCAL_STORAGE_THEME_KEY,
   ThemeContext,
-} from "../../shared/lib/ThemeContext";
+} from "../../shared/lib/contexts/ThemeContext";
 
 export const ThemeProvider: FC = ({ children }) => {
   const [theme, setTheme] = useState<Themes>(DEFAULT_THEME);

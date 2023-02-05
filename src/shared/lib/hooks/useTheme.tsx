@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import { ThemeContext, Themes } from "./ThemeContext";
+import { ThemeContext, Themes } from "../contexts/ThemeContext";
 
 export interface IUseThemeResult {
   theme: Themes;

@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 
-import { cn } from "shared/lib/classnames";
-import useTheme from "shared/lib/useTheme";
+import { cn } from "shared/lib/helpers/classnames";
+import useTheme from "shared/lib/hooks/useTheme";
 import cls from "./Main.module.scss";
 
 const Main: FC = () => {

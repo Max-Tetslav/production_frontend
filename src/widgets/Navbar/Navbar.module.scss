@@ -1,0 +1,14 @@
+.container {
+  width: 100%;
+  background-color: var(--inverted-bg-color);
+  height: var(--navbar-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.linksBox {
+  display: flex;
+  gap: 15px;
+}

@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
 import "./styles/index.scss";
 
 import { AppRouter } from "./router";
 import { Navbar } from "widgets/Navbar";
+import { Sidebar } from "widgets/Sidebar";
 import useTheme from "shared/lib/hooks/useTheme";
 
 const App = () => {
@@ -11,7 +11,10 @@ const App = () => {
   return (
     <div className={`app ${theme}`}>
       <Navbar />
-      <AppRouter />
+      <div className="flex">
+        <Sidebar />
+        <AppRouter />
+      </div>
     </div>
   );
 };

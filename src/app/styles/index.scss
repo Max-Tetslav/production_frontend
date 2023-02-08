@@ -2,6 +2,7 @@
 @import "./variables/global.scss";
 @import "./themes/normal.scss";
 @import "./themes/dark.scss";
+@import "./flex.scss";
 
 .app {
   font: var(--font-m);
@@ -10,4 +11,8 @@
   color: var(--primary-color);
 
   min-height: 100vh;
+}
+
+.page-wrapper {
+  padding: 20px;
 }

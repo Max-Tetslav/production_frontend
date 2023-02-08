@@ -1,9 +1,5 @@
-import { createContext, FC, useCallback, useState } from "react";
-
-export enum Themes {
-  NORMAL = "normal",
-  DARK = "dark",
-}
+import { createContext } from "react";
+import { Themes } from "../constants/enums";
 
 export interface IThemeContextProps {
   theme?: Themes;
@@ -11,10 +7,3 @@ export interface IThemeContextProps {
 }
 
 export const ThemeContext = createContext<IThemeContextProps>({});
-
-export const LOCAL_STORAGE_THEME_KEY = "theme";
-
-export const DEFAULT_THEME =
-  (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Themes | undefined) ||
-  Themes.NORMAL;
-

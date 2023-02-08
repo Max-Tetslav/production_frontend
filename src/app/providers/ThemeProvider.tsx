@@ -1,10 +1,11 @@
 import { FC, useState, useCallback } from "react";
+
 import {
-  Themes,
   DEFAULT_THEME,
   LOCAL_STORAGE_THEME_KEY,
-  ThemeContext,
-} from "../../shared/lib/contexts/ThemeContext";
+} from "shared/lib/constants/named";
+import { Themes } from "shared/lib/constants/enums";
+import { ThemeContext } from "../../shared/lib/contexts/ThemeContext";
 
 export const ThemeProvider: FC = ({ children }) => {
   const [theme, setTheme] = useState<Themes>(DEFAULT_THEME);

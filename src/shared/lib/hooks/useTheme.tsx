@@ -1,6 +1,7 @@
 import { useContext } from "react";
 
-import { ThemeContext, Themes } from "../contexts/ThemeContext";
+import { ThemeContext } from "../contexts/ThemeContext";
+import { Themes } from "../constants/enums";
 
 export interface IUseThemeResult {
   theme: Themes;

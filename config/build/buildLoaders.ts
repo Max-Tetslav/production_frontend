@@ -20,6 +20,17 @@ const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
     exclude: /node_modules/,
   };
 
+  const babelLoader: RuleSetRule = {
+    test: /\.(jsx?|tsx?)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        presets: ["@babel/preset-env"],
+      },
+    },
+  };
+
   const stylesLoader: RuleSetRule = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -42,7 +53,7 @@ const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
     ],
   };
 
-  return [tsLoader, stylesLoader, svgLoader, mediaLoader];
+  return [svgLoader, mediaLoader, stylesLoader, babelLoader, tsLoader];
 };
 
 export default buildLoaders;

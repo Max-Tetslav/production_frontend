@@ -1,4 +1,5 @@
 import {
+  DefinePlugin,
   HotModuleReplacementPlugin,
   ProgressPlugin,
   WebpackPluginInstance,
@@ -23,6 +24,9 @@ const buildPlugins = ({
       chunkFilename: "css/[name].[contenthash]:8.css",
     }),
     new ProgressPlugin(),
+    new DefinePlugin({
+      __IS_DEV__: isDev,
+    }),
   ];
 
   if (isDev) {

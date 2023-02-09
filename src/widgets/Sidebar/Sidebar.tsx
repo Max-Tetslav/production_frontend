@@ -1,5 +1,7 @@
-import { ThemeToggle } from "features/ThemeToggle";
+import { LangSwitcher } from "features/LangSwitcher";
+import { ThemeSwitcher } from "features/ThemeSwitcher";
 import { FC, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "shared/components/Button";
 import { cn } from "shared/lib/helpers/classnames";
 
@@ -18,12 +20,17 @@ const Sidebar: FC<ISidebarProps> = (props) => {
     setIsCollabled((value) => !value);
   };
 
+  const { t } = useTranslation();
+
   return (
     <div className={cn(cls.container, { [cls.collapsed]: isCollapsed })}>
-      <Button onClick={onToggle}>TOOGLE</Button>
+      <Button onClick={onToggle}>
+        {t(isCollapsed ? "collapse" : "opened")}
+      </Button>
 
       <div className={cls.switchersBox}>
-        <ThemeToggle />
+        <LangSwitcher />
+        <ThemeSwitcher />
       </div>
     </div>
   );

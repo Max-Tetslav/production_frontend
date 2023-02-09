@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { useTranslation } from "react-i18next";
 import { AppLink, EAppLinkThemes } from "shared/components/AppLink";
 import { cn } from "shared/lib/helpers/classnames";
 
@@ -11,14 +12,16 @@ interface INavbarProps {
 const Navbar: FC<INavbarProps> = (props) => {
   const { className } = props;
 
+  const { t } = useTranslation();
+
   return (
     <div className={cn(cls.container, className)}>
       <div className={cls.linksBox}>
         <AppLink to="/" theme={EAppLinkThemes.INVERTED}>
-          TO MAIN PAGE
+          {t("main_link")}
         </AppLink>
         <AppLink to="/about" theme={EAppLinkThemes.INVERTED}>
-          TO ABOUT PAGE
+          {t("about_link")}
         </AppLink>
       </div>
     </div>

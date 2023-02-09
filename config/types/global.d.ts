@@ -46,3 +46,5 @@ declare module "*.webp" {
   const src: string;
   export default src;
 }
+
+declare const __IS_DEV__: boolean;

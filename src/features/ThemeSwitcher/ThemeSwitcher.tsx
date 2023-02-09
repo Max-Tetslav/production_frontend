@@ -5,13 +5,13 @@ import { Button } from "shared/components/Button";
 import { Themes } from "shared/lib/constants/enums";
 import ThemeIcon from "shared/assets/icons/theme-dark.svg";
 import useTheme from "shared/lib/hooks/useTheme";
-import cls from "./ThemeToggle.module.scss";
+import cls from "./ThemeSwitcher.module.scss";
 
 interface IThemeToggleProps {
   className?: string;
 }
 
-const ThemeToggle: FC<IThemeToggleProps> = (props) => {
+const ThemeSwitcher: FC<IThemeToggleProps> = (props) => {
   const { className } = props;
 
   const { theme, toggleTheme } = useTheme();
@@ -23,4 +23,4 @@ const ThemeToggle: FC<IThemeToggleProps> = (props) => {
   );
 };
 
-export default ThemeToggle;
+export default ThemeSwitcher;

@@ -1,22 +1,22 @@
 .container {
-  padding: 20px 0;
-  width: var(--sidebar-width);
-  height: calc(100vh - var(--navbar-height));
-  background-color: var(--inverted-bg-color);
-  transition: width ease 0.3s;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    padding: 20px 0;
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--navbar-height));
+    background-color: var(--inverted-bg-color);
+    transition: width ease 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .collapsed {
-  width: var(--sidebar-width-collapsed);
+    width: var(--sidebar-width-collapsed);
 }
 
 .switchersBox {
-  margin-top: auto;
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+    margin-top: auto;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }

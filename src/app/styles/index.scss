@@ -1,18 +1,16 @@
-@import "./reset/reset.scss";
-@import "./variables/global.scss";
-@import "./themes/normal.scss";
-@import "./themes/dark.scss";
-@import "./flex.scss";
+@import "./reset/reset";
+@import "./variables/global";
+@import "./themes/normal";
+@import "./themes/dark";
+@import "./flex";
 
 .app {
-  font: var(--font-m);
-
-  background-color: var(--bg-color);
-  color: var(--primary-color);
-
-  min-height: 100vh;
+    font: var(--font-m);
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    min-height: 100vh;
 }
 
 .page-wrapper {
-  padding: 20px;
+    padding: 20px;
 }

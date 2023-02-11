@@ -3,5 +3,6 @@
   "main_link": "TO MAIN PAGE",
   "about_link": "TO ABOUT PAGE",
   "collapse": "Open",
-  "opened": "Close"
+  "opened": "Close",
+  "not-found-page": "Page not found"
 }

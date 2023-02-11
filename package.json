@@ -10,7 +10,10 @@
     "lint:scripts": "eslint '**/*.{ts,tsx}'",
     "fix:scripts": "eslint '**/*.{ts,tsx}' --fix",
     "lint:styles": "npx stylelint '**/*.scss'",
-    "fix:styles": "npx stylelint '**/*.scss' --fix"
+    "fix:styles": "npx stylelint '**/*.scss' --fix",
+    "test": "npx jest --watchAll=false",
+    "test:coverage": "npx jest --coverage --watchAll=false",
+    "test:watch": "npx jest"
   },
   "keywords": [],
   "author": "Maksim Tetslav",
@@ -18,8 +21,10 @@
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
     "@svgr/webpack": "^6.2.1",
+    "@types/jest": "^27.4.1",
     "@types/node": "^17.0.21",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
@@ -33,6 +38,7 @@
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-i18next": "^5.1.2",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.5.1",
     "mini-css-extract-plugin": "^2.5.3",
     "react-refresh": "^0.12.0",
     "sass": "^1.57.1",

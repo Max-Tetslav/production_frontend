@@ -1,7 +1,7 @@
-import { useContext } from "react";
+import { useContext } from 'react';
 
-import { ThemeContext } from "../contexts/ThemeContext";
-import { Themes } from "../constants/enums";
+import { ThemeContext } from '../contexts/ThemeContext';
+import { Themes } from '../constants/enums';
 
 export interface IUseThemeResult {
   theme: Themes;
@@ -9,12 +9,12 @@ export interface IUseThemeResult {
 }
 
 const useTheme = (): IUseThemeResult => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
+    const { theme, toggleTheme } = useContext(ThemeContext);
 
-  return {
-    theme,
-    toggleTheme,
-  };
+    return {
+        theme,
+        toggleTheme,
+    };
 };
 
 export default useTheme;

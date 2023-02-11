@@ -4,17 +4,18 @@ import { cn } from 'shared/lib/helpers/classnames';
 import cls from './Button.module.scss';
 
 export enum ButtonVariants {
-  CLEAN = 'clean',
+    CLEAN = 'clean',
 }
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: string;
+    variant?: string;
 }
 
 const Button: FC<IButtonProps> = (props) => {
     const {
         className,
         children,
+        type,
         variant = ButtonVariants.CLEAN,
         ...otherProps
     } = props;
@@ -22,7 +23,8 @@ const Button: FC<IButtonProps> = (props) => {
     return (
         <button
             className={cn(cls.container, cls[variant], className)}
-            type={otherProps.type || 'button'}
+            // eslint-disable-next-line react/button-has-type
+            type={type || 'button'}
             {...otherProps}
         >
             {children}

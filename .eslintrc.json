@@ -37,7 +37,8 @@
     "import/no-extraneous-dependencies": "off",
     "no-underscore-dangle": "off",
     "no-undef": "off",
-    "i18next/no-literal-string": ["error", { "markupOnly": true }]
+    "max-len": "off",
+    "i18next/no-literal-string": [2, { "markupOnly": true }]
   },
   "globals": {
     "__IS_DEV__": true

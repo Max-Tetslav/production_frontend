@@ -5,6 +5,7 @@ import { Sidebar } from 'widgets/Sidebar';
 import useTheme from 'shared/lib/hooks/useTheme';
 import { Suspense } from 'react';
 import { AppRouter } from './router';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const App = () => {
     const { theme } = useTheme();
@@ -12,11 +13,13 @@ const App = () => {
     return (
         <div className={`app ${theme}`}>
             <Suspense fallback="">
-                <Navbar />
-                <div className="flex">
-                    <Sidebar />
-                    <AppRouter />
-                </div>
+                <ErrorBoundary>
+                    <Navbar />
+                    <div className="flex">
+                        <Sidebar />
+                        <AppRouter />
+                    </div>
+                </ErrorBoundary>
             </Suspense>
         </div>
     );

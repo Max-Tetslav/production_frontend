@@ -4,7 +4,7 @@ import { Button } from 'shared/components/Button';
 import { cn } from 'shared/lib/helpers/classnames';
 
 interface ILangSwitcherProps {
-  className?: string;
+    className?: string;
 }
 
 const LangSwitcher: FC<ILangSwitcherProps> = (props) => {

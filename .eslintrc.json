@@ -38,6 +38,7 @@
     "no-underscore-dangle": "off",
     "no-undef": "off",
     "max-len": "off",
+    "react/prop-types": "off",
     "i18next/no-literal-string": [2, { "markupOnly": true }]
   },
   "globals": {

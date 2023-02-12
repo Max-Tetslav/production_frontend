@@ -1,3 +1,4 @@
+import BugButton from 'features/BugButton/BugButton';
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -9,6 +10,7 @@ const Main: FC = () => {
 
     return (
         <div className={cls.container}>
+            <BugButton />
             <p>{t('main-page')}</p>
         </div>
     );

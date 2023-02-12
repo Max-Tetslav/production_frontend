@@ -1,4 +1,4 @@
 import App from './App';
-import ThemeProvider from './providers/ThemeProvider';
+import ThemeProvider from './components/ThemeProvider';
 
 export { App, ThemeProvider };

@@ -4,5 +4,6 @@
   "about_link": "TO ABOUT PAGE",
   "collapse": "Open",
   "opened": "Close",
-  "not-found-page": "Page not found"
+  "not-found-page": "Page not found",
+  "errorBoundary": "Unexpected error occured. Try to reload page."
 }

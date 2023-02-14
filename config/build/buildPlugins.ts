@@ -4,6 +4,7 @@ import {
     ProgressPlugin,
     WebpackPluginInstance,
 } from 'webpack';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
@@ -26,6 +27,10 @@ const buildPlugins = ({
         new ProgressPlugin(),
         new DefinePlugin({
             __IS_DEV__: isDev,
+        }),
+        new BundleAnalyzerPlugin({
+            openAnalyzer: false,
+            analyzerMode: 'static',
         }),
     ];
 

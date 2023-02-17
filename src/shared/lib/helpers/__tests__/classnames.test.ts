@@ -1,4 +1,4 @@
-import { cn } from '../classnames';
+import { cn } from 'shared/lib/helpers/classnames';
 
 describe('classnames helper', () => {
     test('one class as string', () => {
@@ -23,7 +23,7 @@ describe('classnames helper', () => {
 
     test('mods expect to fail', () => {
         expect(cn('first', { second: true, third: true })).not.toBe(
-            'first third'
+            'first third',
         );
     });
 });

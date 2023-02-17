@@ -23,14 +23,14 @@ const Sidebar: FC<ISidebarProps> = (props) => {
     const { t } = useTranslation();
 
     return (
-        <div className={cn(cls.container, { [cls.collapsed]: isCollapsed })}>
-            <Button onClick={onToggle}>
+        <div className={cn(cls.container, { [cls.collapsed]: isCollapsed })} role="menu">
+            <Button onClick={onToggle} aria-label="menu-toggle">
                 {t(isCollapsed ? 'collapse' : 'opened')}
             </Button>
 
             <div className={cls.switchersBox}>
-                <LangSwitcher />
-                <ThemeSwitcher />
+                <LangSwitcher aria-label="lang-switcher" />
+                <ThemeSwitcher aria-label="theme-switcher" />
             </div>
         </div>
     );

@@ -1,12 +1,16 @@
 import {
-    ButtonHTMLAttributes, ClassAttributes, FC, forwardRef,
+    ButtonHTMLAttributes,
+    ClassAttributes,
+    FC,
+    forwardRef,
 } from 'react';
 import { cn } from 'shared/lib/helpers/classnames';
 
 import cls from './Button.module.scss';
 
 export enum ButtonVariants {
-    CLEAN = 'clean'
+    CLEAN = 'clean',
+    OUTLINE = 'outline'
 }
 
 interface IButtonProps

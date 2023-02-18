@@ -4,5 +4,11 @@
     border: 0;
     background: none;
     outline: none;
-    cursor: pointer;
+}
+
+.outline {
+    padding: 0.25rem 0.5rem;
+    margin: 0;
+    border: 1px solid var(--inverted-bg-color);
+    background: none;
 }

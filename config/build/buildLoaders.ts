@@ -2,12 +2,11 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 import { RuleSetRule } from 'webpack';
 import { BuildOptions } from '../types/config';
+import buildCssLoaders from './loaders/buildCssLoaders';
+import buildSvgLoader from './loaders/buildSvgLoader';
 
 const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
-    const svgLoader: RuleSetRule = {
-        test: /\.svg$/,
-        use: '@svgr/webpack',
-    };
+    const svgLoader: RuleSetRule = buildSvgLoader();
 
     const mediaLoader: RuleSetRule = {
         test: /\.(png|jpg|jpeg|gif)$/i,
@@ -31,27 +30,7 @@ const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
         },
     };
 
-    const stylesLoader: RuleSetRule = {
-        test: /\.s[ac]ss$/i,
-        use: [
-            // Creates `style` nodes from JS strings
-            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-            // Translates CSS into CommonJS
-            {
-                loader: 'css-loader',
-                options: {
-                    modules: {
-                        auto: (path: string) => Boolean(path.includes('.module.')),
-                        localIdentName: isDev
-                            ? '[folder]__[local]_[hash:base64:6]'
-                            : '[hash:base64:8]',
-                    },
-                },
-            },
-            // Compiles Sass to CSS
-            'sass-loader',
-        ],
-    };
+    const stylesLoader: RuleSetRule = buildCssLoaders(isDev);
 
     return [svgLoader, mediaLoader, stylesLoader, babelLoader, tsLoader];
 };

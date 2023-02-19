@@ -1,29 +1,29 @@
 # Workflow name
-name: 'Test-project'
-run-name: 'Test-project'
-
-# Event for the workflow
-on: push
-
-# List of jobs
+name: 'Test-Storybook'
+run-name: 'Test-Storybook'
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    types: [opened, reopened]
+    branches: [ main ]
 jobs:
-  Test-project:
-    # Operating System
+  Test-Storybook:
     runs-on: ubuntu-latest
-    # Job steps
     strategy:
       matrix:
         node-version: [17.x]
     steps:
-      - uses: actions/checkout@v1
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install modules
         run: npm install
-      - name: Jest & Testing Library
-        run: npm run test
       - name: Storybook
         uses: chromaui/action@v1
         with:

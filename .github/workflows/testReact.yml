@@ -1,5 +1,5 @@
-name: Lint-project
-run-name: Lint-project
+name: Test-Jest-TestingLibrary-project
+run-name: Test-Jest-TestingLibrary-project
 on:
   push:
     branches: [ main ]
@@ -7,7 +7,7 @@ on:
     types: [opened, reopened]
     branches: [ main ]
 jobs:
-  Lint-project:
+  Test-Jest-TestingLibrary-project:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -20,7 +20,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install Modules
         run: npm install
-      - name: Lint scripts
-        run: npm run lint:scripts
-      - name: Lint styles
-        run: npm run lint:styles
+      - name: Run tests
+        run: npm run test

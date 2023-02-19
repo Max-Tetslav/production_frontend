@@ -16,14 +16,7 @@ const Navbar: FC<INavbarProps> = (props) => {
 
     return (
         <div className={cn(cls.container, className)}>
-            <div className={cls.linksBox}>
-                <AppLink to="/" theme={EAppLinkThemes.INVERTED}>
-                    {t('main_link')}
-                </AppLink>
-                <AppLink to="/about" theme={EAppLinkThemes.INVERTED}>
-                    {t('about_link')}
-                </AppLink>
-            </div>
+            <div className={cls.linksBox} />
         </div>
     );
 };

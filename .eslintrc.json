@@ -41,6 +41,20 @@
         "react/prop-types": "off",
         "i18next/no-literal-string": [2, { "markupOnly": true, "ignoreAttribute": ["aria-label", "to"] }]
     },
+    "overrides": [
+      {
+        "files": "**/*.test.+(ts|tsx)",
+        "rules": {
+          "i18next/no-literal-string": "off"
+        }
+      },
+      {
+        "files": "**/*.stories.tsx",
+        "rules": {
+          "camelcase": "off"
+        }
+      }
+    ],
     "globals": {
         "__IS_DEV__": true
     }

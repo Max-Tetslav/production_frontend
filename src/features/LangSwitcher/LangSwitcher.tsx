@@ -5,10 +5,11 @@ import { cn } from 'shared/lib/helpers/classnames';
 
 interface ILangSwitcherProps {
     className?: string;
+    isShortText?: boolean;
 }
 
 const LangSwitcher: FC<ILangSwitcherProps> = (props) => {
-    const { className } = props;
+    const { className, isShortText } = props;
 
     const { t, i18n } = useTranslation();
 
@@ -18,7 +19,7 @@ const LangSwitcher: FC<ILangSwitcherProps> = (props) => {
 
     return (
         <Button className={cn(className)} onClick={toggleLang}>
-            {t('translate')}
+            {t(isShortText ? 'short-translate' : 'translate')}
         </Button>
     );
 };

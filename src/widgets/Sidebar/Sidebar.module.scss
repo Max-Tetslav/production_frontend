@@ -1,22 +1,69 @@
 .container {
+    position: relative;
     padding: 20px 0;
     width: var(--sidebar-width);
     height: calc(100vh - var(--navbar-height));
     background-color: var(--inverted-bg-color);
-    transition: width ease 0.3s;
+    transition: all ease 0.3s;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.collapsed {
-    width: var(--sidebar-width-collapsed);
+.linksBox {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        white-space: nowrap;
+        height: var(--font-line-l);
+    }
+
+    .icon {
+        fill: var(--inverted-primary-color);
+    }
+
+    .linkText {
+        transition: all ease 0.5s;
+    }
 }
 
 .switchersBox {
     margin-top: auto;
-    flex-direction: column;
     display: flex;
     justify-content: center;
     gap: 20px;
+    transition: all ease 0.3s;
+}
+
+.collapsed {
+    width: var(--sidebar-width-collapsed);
+
+    .linksBox {
+        margin-left: 0;
+    }
+
+    .link {
+        justify-content: center;
+    }
+
+    .linkText {
+        display: none;
+    }
+
+    .switchersBox {
+        flex-direction: column;
+    }
+}
+
+.collapseBtn {
+    position: absolute;
+    right: -32px;
+    bottom: 32px;
+    background-color: var(--inverted-bg-color);
 }

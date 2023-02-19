@@ -1,12 +1,12 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import renderWithTranslation from 'shared/lib/helpers/renderWithTranslation';
+import renderWithProviders from 'shared/lib/helpers/renderWithProviders';
 
 import Sidebar from './Sidebar';
 
 describe('Sidebar', () => {
     test('render', () => {
-        renderWithTranslation(<Sidebar />);
+        renderWithProviders(<Sidebar />);
 
         const sideBar = screen.getByRole('menu');
 
@@ -14,7 +14,7 @@ describe('Sidebar', () => {
     });
 
     test('menu toggle works', async () => {
-        renderWithTranslation(<Sidebar />);
+        renderWithProviders(<Sidebar />);
 
         const sideBar = screen.getByRole('menu');
         const menuToggle = screen.getByLabelText('menu-toggle');

@@ -1,8 +1,8 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: Test-Lint-Build-project
+run-name: Test-Lint-Build-project
 on: push
 jobs:
-  Explore-GitHub-Actions:
+  Test-Lint-Build-project:
     runs-on: ubuntu-latest
     strategy:
       matrix:

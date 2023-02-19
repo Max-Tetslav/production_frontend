@@ -21,7 +21,7 @@
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "build:storybook": "build-storybook -c ./config/storybook",
     "test:storybook": "npx chromatic --project-token=8ad0f255a800 --no-interactive",
-    "ci:test:storybook": "npx chromatic --project-token=8ad0f255a800 --only-changed"
+    "ci:test:storybook": "npx chromatic --project-token=8ad0f255a800 --only-changed=true --zip=true"
   },
   "keywords": [],
   "license": "ISC",

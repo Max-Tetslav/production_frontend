@@ -1,0 +1,32 @@
+# Workflow name
+name: 'Test-project'
+run-name: 'Test-project'
+
+# Event for the workflow
+on: push
+
+# List of jobs
+jobs:
+  Test-project:
+    # Operating System
+    runs-on: ubuntu-latest
+    # Job steps
+    strategy:
+      matrix:
+        node-version: [17.x]
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install modules
+        run: npm install
+      - name: Jest & Testing Library
+        run: npm run test
+      - name: Storybook
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          onlyChanged: true
+          zip: true

@@ -1,0 +1,24 @@
+name: Build-project
+run-name: Build-project
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    types: [opened, reopened]
+    branches: [ main ]
+jobs:
+  Build-project:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [17.x]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install Modules
+        run: npm install
+      - name: Build project
+        run: npm run build:prod

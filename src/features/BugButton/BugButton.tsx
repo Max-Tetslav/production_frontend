@@ -1,9 +1,9 @@
+/* eslint-disable */ 
 import { FC, useEffect, useState } from 'react';
 
 interface IBugButtonProps {
     className?: string;
 }
-
 const BugButton: FC<IBugButtonProps> = (props) => {
     const [isError, setIsError] = useState(false);
 

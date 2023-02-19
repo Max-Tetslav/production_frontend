@@ -34,9 +34,9 @@ const buildPlugins = ({
         plugins.push(new HotModuleReplacementPlugin());
         plugins.push(new ReactRefreshWebpackPlugin());
         plugins.push(new BundleAnalyzerPlugin({
-          openAnalyzer: false,
-          analyzerMode: 'static',
-        }))
+            openAnalyzer: false,
+            analyzerMode: 'static',
+        }));
     }
 
     return plugins;

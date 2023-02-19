@@ -6,6 +6,7 @@ import Button, { ButtonVariants } from './Button';
 
 describe('Button', () => {
     test('render', () => {
+        // eslint-disable-next-line i18next/no-literal-string
         render(<Button>текст</Button>);
         const btn = screen.getByRole('button');
 
@@ -13,6 +14,7 @@ describe('Button', () => {
     });
 
     test('className prop works', () => {
+        // eslint-disable-next-line i18next/no-literal-string
         render(<Button className="test">текст</Button>);
         const btn = screen.getByRole('button');
 
@@ -20,6 +22,7 @@ describe('Button', () => {
     });
 
     test('variant prop works', () => {
+        // eslint-disable-next-line i18next/no-literal-string
         render(<Button variant={ButtonVariants.CLEAN}>текст</Button>);
         const btn = screen.getByRole('button');
 
@@ -27,6 +30,7 @@ describe('Button', () => {
     });
 
     test('onClick prop works', async () => {
+        // eslint-disable-next-line i18next/no-literal-string
         render(<Button onClick={fakeFn}>текст</Button>);
         const btn = screen.getByRole('button');
 

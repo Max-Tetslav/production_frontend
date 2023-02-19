@@ -1,5 +1,6 @@
 # Workflow name
 name: 'Screenshot-testing'
+run-name: 'Screenshot-testing'
 
 # Event for the workflow
 on: push

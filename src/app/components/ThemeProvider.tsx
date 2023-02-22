@@ -2,15 +2,14 @@ import {
     FC, useState, useCallback, useMemo,
 } from 'react';
 
-import {
-    DEFAULT_THEME,
-    LOCAL_STORAGE_THEME_KEY,
-} from 'shared/lib/constants/named';
+import { DEFAULT_THEME, LOCAL_STORAGE_THEME_KEY } from 'shared/lib/constants/named';
 import { Themes } from 'shared/lib/constants/enums';
 import { ThemeContext } from '../../shared/lib/contexts/ThemeContext';
 
 export const ThemeProvider: FC = ({ children }) => {
     const [theme, setTheme] = useState<Themes>(DEFAULT_THEME);
+
+    document.body.className = theme;
 
     const toggleTheme = useCallback(() => {
         setTheme((theme) => {

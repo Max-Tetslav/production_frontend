@@ -11,4 +11,4 @@ const Template: ComponentStory<typeof Loader> = (args) => <Loader {...args} />;
 
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.storyName = 'Loader';

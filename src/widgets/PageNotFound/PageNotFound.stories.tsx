@@ -11,4 +11,4 @@ const Template: ComponentStory<typeof PageNotFound> = (args) => <PageNotFound {.
 
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.storyName = 'PageNotFound';

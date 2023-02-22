@@ -3,11 +3,7 @@
         "browser": true,
         "es2021": true
     },
-    "extends": [
-        "plugin:react/recommended",
-        "airbnb",
-        "plugin:i18next/recommended"
-    ],
+    "extends": ["plugin:react/recommended", "airbnb", "plugin:i18next/recommended"],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaFeatures": {
@@ -16,15 +12,12 @@
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "plugins": ["react", "@typescript-eslint", "i18next"],
+    "plugins": ["react", "react-hooks", "@typescript-eslint", "i18next"],
     "rules": {
         "react/jsx-indent": [2, 4],
         "react/jsx-indent-props": [2, 4],
         "indent": [2, 4],
-        "react/jsx-filename-extension": [
-            2,
-            { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
-        ],
+        "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
         "import/no-unresolved": "off",
         "import/prefer-default-export": "off",
         "no-unused-vars": "warn",
@@ -39,21 +32,25 @@
         "no-undef": "off",
         "max-len": [2, { "code": 120 }],
         "react/prop-types": "off",
-        "i18next/no-literal-string": [2, { "markupOnly": true, "ignoreAttribute": ["aria-label", "to"] }]
+        "i18next/no-literal-string": [2, { "markupOnly": true, "ignoreAttribute": ["aria-label", "to"] }],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/no-static-element-interactions": "off"
     },
     "overrides": [
-      {
-        "files": "**/*.test.+(ts|tsx)",
-        "rules": {
-          "i18next/no-literal-string": "off"
+        {
+            "files": "**/*.test.+(ts|tsx)",
+            "rules": {
+                "i18next/no-literal-string": "off"
+            }
+        },
+        {
+            "files": "**/*.stories.tsx",
+            "rules": {
+                "camelcase": "off"
+            }
         }
-      },
-      {
-        "files": "**/*.stories.tsx",
-        "rules": {
-          "camelcase": "off"
-        }
-      }
     ],
     "globals": {
         "__IS_DEV__": true

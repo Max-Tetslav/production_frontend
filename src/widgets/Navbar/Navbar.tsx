@@ -1,12 +1,13 @@
-import { FC } from 'react';
+import { FC, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { AppLink, EAppLinkThemes } from 'shared/components/AppLink';
+import { Button, ButtonVariants } from 'shared/components/Button';
+import { Modal } from 'shared/components/Modal';
 import { cn } from 'shared/lib/helpers/classnames';
 
 import cls from './Navbar.module.scss';
 
 interface INavbarProps {
-  className?: string;
+    className?: string;
 }
 
 const Navbar: FC<INavbarProps> = (props) => {
@@ -14,9 +15,26 @@ const Navbar: FC<INavbarProps> = (props) => {
 
     const { t } = useTranslation();
 
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModalHandler = useCallback(() => {
+        setIsModalOpen(true);
+    }, []);
+
+    const closeModalHandler = useCallback(() => {
+        setIsModalOpen(false);
+    }, []);
+
     return (
         <div className={cn(cls.container, className)}>
-            <div className={cls.linksBox} />
+            <div className={cls.linksBox}>
+                <Button onClick={openModalHandler} variant={ButtonVariants.BACKGROUND}>
+                    {t('SignIn')}
+                </Button>
+                <Modal isOpen={isModalOpen} onClose={closeModalHandler}>
+                    {3}
+                </Modal>
+            </div>
         </div>
     );
 };

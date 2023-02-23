@@ -11,4 +11,4 @@ const Template: ComponentStory<typeof PageLoader> = (args) => <PageLoader {...ar
 
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.storyName = 'PageLoader';

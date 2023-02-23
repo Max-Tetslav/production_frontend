@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { cn } from 'shared/lib/helpers/classnames';
 
 interface IErrorBoundaryFallbackProps {
     className?: string;
@@ -12,7 +11,7 @@ const ErrorBoundaryFallback: FC<IErrorBoundaryFallbackProps> = (props) => {
     const { t } = useTranslation();
 
     return (
-        <div className={cn('flex-center', 'vh100')}>
+        <div className="flex-center vh100">
             <h2>{t('errorBoundary')}</h2>
         </div>
     );

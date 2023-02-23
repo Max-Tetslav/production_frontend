@@ -11,4 +11,4 @@ const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar {...args} />
 
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.storyName = 'Sidebar';

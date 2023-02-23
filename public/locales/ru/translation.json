@@ -6,5 +6,6 @@
   "opened": "Скрыть",
   "not-found-page": "Страница не найдена",
   "errorBoundary": "Произошла непредвиденная ошибка. Попробуйте перезагрузить страницу",
-  "short-translate": "En"
+  "short-translate": "En",
+  "SignIn": "Войти"
 }

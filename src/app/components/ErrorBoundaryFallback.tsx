@@ -5,7 +5,7 @@ interface IErrorBoundaryFallbackProps {
     className?: string;
 }
 
-const ErrorBoundaryFallback: FC<IErrorBoundaryFallbackProps> = props => {
+const ErrorBoundaryFallback: FC<IErrorBoundaryFallbackProps> = (props) => {
     const { className } = props;
 
     const { t } = useTranslation();

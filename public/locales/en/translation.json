@@ -7,5 +7,7 @@
   "not-found-page": "Page not found",
   "errorBoundary": "Unexpected error occured. Try to reload page.",
   "short-translate": "Ru",
-  "SignIn": "SignIn"
+  "SignIn": "SignIn",
+  "Increment": "Increment",
+  "Decrement": "Decrement"
 }

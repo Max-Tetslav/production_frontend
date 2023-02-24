@@ -2,18 +2,7 @@ import { RouteProps } from 'react-router-dom';
 
 import { About, Main } from 'pages';
 import { PageNotFound } from 'widgets/PageNotFound';
-
-export enum EAppRoutes {
-    MAIN = 'main',
-    ABOUT = 'about',
-    NOT_FOUND = 'not_found'
-}
-
-export const routesPathList: Record<EAppRoutes, string> = {
-    [EAppRoutes.MAIN]: '/',
-    [EAppRoutes.ABOUT]: '/about',
-    [EAppRoutes.NOT_FOUND]: '*',
-};
+import { EAppRoutes, routesPathList } from 'shared/lib/config/router';
 
 export const routeList: Record<EAppRoutes, RouteProps> = {
     [EAppRoutes.MAIN]: {

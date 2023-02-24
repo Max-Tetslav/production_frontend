@@ -4,10 +4,10 @@ import { useTranslation } from 'react-i18next';
 import { AppLink, EAppLinkThemes } from 'shared/components/AppLink';
 import { Button, ButtonVariants } from 'shared/components/Button';
 import { ButtonSizes } from 'shared/components/Button/Button';
-import { LangSwitcher } from 'shared/components/LangSwitcher';
-import { routesPathList } from 'app/router/config/router';
-import { ThemeSwitcher } from 'shared/components/ThemeSwitcher';
 import { cn } from 'shared/lib/helpers/classnames';
+import { LangSwitcher } from 'shared/components/LangSwitcher';
+import { routesPathList } from 'shared/lib/config/router';
+import { ThemeSwitcher } from 'shared/components/ThemeSwitcher';
 import AboutIcon from 'shared/assets/icons/about-page.svg';
 import MainIcon from 'shared/assets/icons/main-page.svg';
 import cls from './Sidebar.module.scss';
@@ -28,24 +28,13 @@ const Sidebar: FC<ISidebarProps> = (props) => {
     const { t } = useTranslation();
 
     return (
-        <div
-            className={cn(cls.container, { [cls.collapsed]: isCollapsed })}
-            role="menu"
-        >
+        <div className={cn(cls.container, { [cls.collapsed]: isCollapsed })} role="menu">
             <div className={cls.linksBox}>
-                <AppLink
-                    to={routesPathList.main}
-                    theme={EAppLinkThemes.INVERTED}
-                    className={cls.link}
-                >
+                <AppLink to={routesPathList.main} theme={EAppLinkThemes.INVERTED} className={cls.link}>
                     <MainIcon className={cls.icon} />
                     <span className={cls.linkText}>{t('main_link')}</span>
                 </AppLink>
-                <AppLink
-                    to={routesPathList.about}
-                    theme={EAppLinkThemes.INVERTED}
-                    className={cls.link}
-                >
+                <AppLink to={routesPathList.about} theme={EAppLinkThemes.INVERTED} className={cls.link}>
                     <AboutIcon className={cls.icon} />
                     <span className={cls.linkText}>{t('about_link')}</span>
                 </AppLink>
@@ -63,10 +52,7 @@ const Sidebar: FC<ISidebarProps> = (props) => {
 
             <div className={cls.switchersBox}>
                 <ThemeSwitcher aria-label="theme-switcher" />
-                <LangSwitcher
-                    aria-label="lang-switcher"
-                    isShortText={isCollapsed}
-                />
+                <LangSwitcher aria-label="lang-switcher" isShortText={isCollapsed} />
             </div>
         </div>
     );

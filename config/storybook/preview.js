@@ -1,8 +1,9 @@
 import { addDecorator } from '@storybook/react';
-import TranslateDecorator from 'shared/lib/config/storybook/TranslateDecorator';
 
 import AppDecorator from '../../src/shared/lib/config/storybook/AppDecorator';
 import RouterDecorator from '../../src/shared/lib/config/storybook/RouterDecorator';
+import StoreDecorator from '../../src/shared/lib/config/storybook/StoreDecorator';
+import TranslateDecorator from 'shared/lib/config/storybook/TranslateDecorator';
 
 export const parameters = {
     actions: { argTypesRegex: '^on[A-Z].*' },
@@ -39,6 +40,7 @@ export const globalTypes = {
     }
 };
 
+addDecorator(StoreDecorator);
 addDecorator(RouterDecorator);
 addDecorator(TranslateDecorator);
 addDecorator(AppDecorator);

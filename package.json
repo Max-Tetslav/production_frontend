@@ -22,7 +22,8 @@
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "build:storybook": "build-storybook -c ./config/storybook",
     "test:storybook": "npx chromatic --project-token=8ad0f255a800 --no-interactive",
-    "ci:test:storybook": "npx chromatic --project-token=8ad0f255a800 --only-changed=true --zip=true"
+    "ci:test:storybook": "npx chromatic --project-token=8ad0f255a800 --only-changed=true --zip=true",
+    "prepare": "husky install"
   },
   "keywords": [],
   "license": "ISC",
@@ -80,7 +81,8 @@
     "webpack": "^5.75.0",
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.7.4"
+    "webpack-dev-server": "^4.7.4",
+    "husky": "^8.0.0"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",

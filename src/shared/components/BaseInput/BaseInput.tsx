@@ -11,9 +11,7 @@ interface IBaseInputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const BaseInput: FC<IBaseInputProps> = (props) => {
-    const {
-        className, label, labelClassName, labelId, labelFor, id,
-    } = props;
+    const { className, label, labelClassName, labelId, labelFor, id } = props;
 
     return (
         <label className={cn(cls.container, labelClassName)} id={labelId} htmlFor={labelFor}>

@@ -9,5 +9,7 @@
   "short-translate": "Ru",
   "SignIn": "SignIn",
   "Increment": "Increment",
-  "Decrement": "Decrement"
+  "Decrement": "Decrement",
+  "enter-login": "Enter login",
+  "enter-password": "Enter password"
 }

@@ -1,11 +1,11 @@
-import { Configuration, RuleSetRule } from 'webpack';
+import { Configuration, DefinePlugin, RuleSetRule } from 'webpack';
 import path from 'path';
 
 import { BuildPaths } from '../types/config';
 import buildCssLoaders from '../build/loaders/buildCssLoaders';
 import buildSvgLoader from '../build/loaders/buildSvgLoader';
 
-export default ({ config }: {config: Configuration}) => {
+export default ({ config }: { config: Configuration }) => {
     const paths: BuildPaths = {
         html: '',
         build: '',
@@ -17,7 +17,7 @@ export default ({ config }: {config: Configuration}) => {
     config.resolve.extensions.push('ts', 'tsx');
 
     // eslint-disable-next-line no-param-reassign
-    config.module.rules = config.module.rules.map((rule:RuleSetRule) => {
+    config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
         if (/svg/.test(rule.test as string)) {
             return { ...rule, exclude: /\.svg$/ };
         }
@@ -27,6 +27,12 @@ export default ({ config }: {config: Configuration}) => {
 
     config.module.rules.push(buildSvgLoader());
     config.module.rules.push(buildCssLoaders(true));
+
+    config.plugins.push(
+        new DefinePlugin({
+            __IS_DEV__: true,
+        }),
+    );
 
     return config;
 };

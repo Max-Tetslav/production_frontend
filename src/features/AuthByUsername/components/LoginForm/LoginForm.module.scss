@@ -1,0 +1,24 @@
+.container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.inputContainers {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.labelInput {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 1.3rem;
+}
+
+.loginButton {
+    width: 200px;
+}

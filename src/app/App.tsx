@@ -12,7 +12,7 @@ import { ThemeProvider } from './providers/Theme';
 
 const App = () => (
     <BrowserRouter>
-        <StoreProvider initialState={{} as StateScheme}>
+        <StoreProvider>
             <ThemeProvider>
                 <div className="app">
                     <Suspense fallback="">

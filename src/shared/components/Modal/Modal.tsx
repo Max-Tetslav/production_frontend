@@ -8,7 +8,6 @@ import cls from './Modal.module.scss';
 
 interface IModalProps {
     className?: string;
-    contentClassName?: string;
     children: ReactNode;
     isOpen: boolean;
     onClose: VoidFunction;
@@ -17,7 +16,7 @@ interface IModalProps {
 
 const Modal: FC<IModalProps> = (props) => {
     const {
-        className, contentClassName, children, onClose, isOpen, domTarget,
+        className, children, onClose, isOpen, domTarget,
     } = props;
 
     const clickContentHandler = (e: MouseEvent) => {
@@ -40,9 +39,9 @@ const Modal: FC<IModalProps> = (props) => {
 
     return (
         <Portal target={domTarget}>
-            <div className={cn(cls.container, className, { [cls.opened]: isOpen })}>
+            <div className={cn(cls.container, { [cls.opened]: isOpen })}>
                 <div className={cn(cls.overlay)} onClick={onClose}>
-                    <div className={cn(cls.content, contentClassName)} onClick={clickContentHandler}>
+                    <div className={cn(cls.content, className)} onClick={clickContentHandler}>
                         {children}
                     </div>
                 </div>

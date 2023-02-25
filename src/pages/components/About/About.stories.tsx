@@ -11,4 +11,5 @@ const Template: ComponentStory<typeof About> = (args) => <About {...args} />;
 
 export const Default = Template.bind({});
 
+Default.storyName = 'About';
 Default.args = {};

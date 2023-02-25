@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+}
+
+.input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+    color: var(--inverted-secondary-color);
+    outline: none;
+}

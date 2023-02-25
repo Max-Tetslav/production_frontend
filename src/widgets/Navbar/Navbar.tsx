@@ -1,9 +1,7 @@
 import { FC, useCallback, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Button, ButtonVariants } from 'shared/components/Button';
-import { Modal } from 'shared/components/Modal';
 import { cn } from 'shared/lib/helpers/classnames';
-
+import { LoginButton, LoginForm } from 'features/AuthByUsername';
+import { Modal } from 'shared/components/Modal';
 import cls from './Navbar.module.scss';
 
 interface INavbarProps {
@@ -12,8 +10,6 @@ interface INavbarProps {
 
 const Navbar: FC<INavbarProps> = (props) => {
     const { className } = props;
-
-    const { t } = useTranslation();
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -28,11 +24,9 @@ const Navbar: FC<INavbarProps> = (props) => {
     return (
         <div className={cn(cls.container, className)}>
             <div className={cls.linksBox}>
-                <Button onClick={openModalHandler} variant={ButtonVariants.BACKGROUND}>
-                    {t('SignIn')}
-                </Button>
-                <Modal isOpen={isModalOpen} onClose={closeModalHandler}>
-                    {3}
+                <LoginButton onClick={openModalHandler} />
+                <Modal className={cls.modalContainer} isOpen={isModalOpen} onClose={closeModalHandler}>
+                    <LoginForm />
                 </Modal>
             </div>
         </div>

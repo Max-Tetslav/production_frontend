@@ -21,7 +21,7 @@ export enum ButtonSizes {
     XL = 'size_xl'
 }
 
-interface IButtonProps
+export interface IButtonProps
     extends ButtonHTMLAttributes<HTMLButtonElement>,
         ClassAttributes<HTMLButtonElement> {
     variant?: ButtonVariants;

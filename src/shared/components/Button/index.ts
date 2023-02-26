@@ -1,3 +1,3 @@
-import Button, { ButtonVariants } from './Button';
+import Button, { ButtonVariants, IButtonProps } from './Button';
 
-export { Button, ButtonVariants };
+export { Button, ButtonVariants, IButtonProps };

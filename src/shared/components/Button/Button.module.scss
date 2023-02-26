@@ -1,6 +1,12 @@
 .container {
     color: var(--primary-color);
     padding: 6px 14px;
+
+    &:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+        cursor: not-allowed;
+    }
 }
 
 .clean {

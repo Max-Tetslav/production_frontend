@@ -1,5 +1,4 @@
 import { Themes } from './enums';
+import { THEME_LOCALSTORAGE_KEY } from './localStorage';
 
-export const LOCAL_STORAGE_THEME_KEY = 'theme';
-
-export const DEFAULT_THEME = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Themes | null) || Themes.NORMAL;
+export const DEFAULT_THEME = (localStorage.getItem(THEME_LOCALSTORAGE_KEY) as Themes | null) || Themes.NORMAL;

@@ -7,9 +7,12 @@
   "not-found-page": "Page not found",
   "errorBoundary": "Unexpected error occured. Try to reload page.",
   "short-translate": "Ru",
-  "SignIn": "SignIn",
+  "sign-in": "Sign In",
+  "sign-out": "Sign Out",
   "Increment": "Increment",
   "Decrement": "Decrement",
   "enter-login": "Enter login",
-  "enter-password": "Enter password"
+  "enter-password": "Enter password",
+  "auth-form-title": "Auth Form",
+  "auth-form-error": "Wrong Login or Password"
 }

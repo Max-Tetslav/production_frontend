@@ -1,8 +1,9 @@
 import {
-    FC, useState, useCallback, useMemo,
+    FC, useState, useCallback, useMemo
 } from 'react';
 
-import { DEFAULT_THEME, LOCAL_STORAGE_THEME_KEY } from 'shared/lib/constants/named';
+import { DEFAULT_THEME } from 'shared/lib/constants/named';
+import { THEME_LOCALSTORAGE_KEY } from 'shared/lib/constants/localStorage';
 import { ThemeContext } from 'shared/lib/contexts/ThemeContext';
 import { Themes } from 'shared/lib/constants/enums';
 
@@ -15,7 +16,7 @@ export const ThemeProvider: FC = ({ children }) => {
         setTheme((theme) => {
             const newTheme = theme === Themes.DARK ? Themes.NORMAL : Themes.DARK;
 
-            localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
+            localStorage.setItem(THEME_LOCALSTORAGE_KEY, newTheme);
 
             return newTheme;
         });
@@ -26,9 +27,9 @@ export const ThemeProvider: FC = ({ children }) => {
             value={useMemo(
                 () => ({
                     theme,
-                    toggleTheme,
+                    toggleTheme
                 }),
-                [theme, toggleTheme],
+                [theme, toggleTheme]
             )}
         >
             {children}

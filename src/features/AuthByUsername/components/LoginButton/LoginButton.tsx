@@ -1,18 +1,23 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonVariants } from 'shared/components/Button';
+import { Button, ButtonVariants, IButtonProps } from 'shared/components/Button';
 
-interface ILoginButtonProps {
-    className?: string;
-    onClick?: VoidFunction;
+export enum LoginButtonStatuses {
+    SIGN_IN = 'sign-in',
+    SIGN_OUT = 'sign-out'
+}
+
+export interface ILoginButtonProps extends IButtonProps {
+    status: LoginButtonStatuses;
 }
 
 const LoginButton: FC<ILoginButtonProps> = (props) => {
+    const { variant, status } = props;
     const { t } = useTranslation();
 
     return (
-        <Button {...props} variant={ButtonVariants.OUTLINE}>
-            {t('SignIn')}
+        <Button variant={variant || ButtonVariants.OUTLINE} {...props}>
+            {t(status)}
         </Button>
     );
 };

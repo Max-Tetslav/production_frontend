@@ -40,7 +40,6 @@ export const globalTypes = {
     }
 };
 
-addDecorator(StoreDecorator);
 addDecorator(RouterDecorator);
 addDecorator(TranslateDecorator);
 addDecorator(AppDecorator);

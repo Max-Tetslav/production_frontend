@@ -7,9 +7,12 @@
   "not-found-page": "Страница не найдена",
   "errorBoundary": "Произошла непредвиденная ошибка. Попробуйте перезагрузить страницу",
   "short-translate": "En",
-  "SignIn": "Войти",
+  "sign-in": "Войти",
+  "sign-out": "Выйти",
   "Increment": "Плюс",
   "Decrement": "Минус",
   "enter-login": "Введите логин:",
-  "enter-password": "Введите пароль:"
+  "enter-password": "Введите пароль:",
+  "auth-form-title": "Форма авторизации",
+  "auth-form-error": "Вы ввели неверный логин или пароль"
 }

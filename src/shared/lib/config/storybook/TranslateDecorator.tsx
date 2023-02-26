@@ -5,18 +5,20 @@ import { Suspense, useEffect } from 'react';
 import i18n from '../i18n/i18n';
 
 const TranslateDecorator = (StoryComponent: Story, context: StoryContext) => {
-    const { globals: { locale } } = context;
+    const {
+        globals: { locale }
+    } = context;
 
     useEffect(() => {
         i18n.changeLanguage(locale);
     }, [locale]);
 
     return (
-        <Suspense fallback="">
-            <I18nextProvider i18n={i18n}>
+        <I18nextProvider i18n={i18n}>
+            <Suspense fallback="">
                 <StoryComponent />
-            </I18nextProvider>
-        </Suspense>
+            </Suspense>
+        </I18nextProvider>
     );
 };
 

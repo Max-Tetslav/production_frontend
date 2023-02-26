@@ -8,19 +8,19 @@ export default {
     argTypes: {
         variant: {
             options: Object.values(ButtonVariants),
-            control: { type: 'radio' },
+            control: { type: 'radio' }
         },
         size: {
             options: Object.values(ButtonSizes),
-            control: { type: 'radio' },
+            control: { type: 'radio' }
         },
         square: {
             defaultValue: false,
             control: {
-                type: 'boolean',
-            },
-        },
-    },
+                type: 'boolean'
+            }
+        }
+    }
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
@@ -30,20 +30,20 @@ export const Clean = Template.bind({});
 Clean.argTypes = {
     variant: {
         control: {
-            type: null,
-        },
+            type: null
+        }
     },
     square: {
         control: {
-            type: null,
-        },
-    },
+            type: null
+        }
+    }
 };
 
 Clean.args = {
     children: 'Кнопка',
     variant: ButtonVariants.CLEAN,
-    size: ButtonSizes.M,
+    size: ButtonSizes.M
 };
 
 export const Outline = Template.bind({});
@@ -51,20 +51,42 @@ export const Outline = Template.bind({});
 Outline.argTypes = {
     variant: {
         control: {
-            type: null,
-        },
+            type: null
+        }
     },
     square: {
         control: {
-            type: null,
-        },
-    },
+            type: null
+        }
+    }
 };
 
 Outline.args = {
     children: 'Кнопка',
     variant: ButtonVariants.OUTLINE,
+    size: ButtonSizes.M
+};
+
+export const Disabled = Template.bind({});
+
+Disabled.argTypes = {
+    variant: {
+        control: {
+            type: null
+        }
+    },
+    square: {
+        control: {
+            type: null
+        }
+    }
+};
+
+Disabled.args = {
+    children: 'Кнопка',
+    variant: ButtonVariants.OUTLINE,
     size: ButtonSizes.M,
+    disabled: true
 };
 
 export const Background = Template.bind({});
@@ -72,20 +94,20 @@ export const Background = Template.bind({});
 Background.argTypes = {
     variant: {
         control: {
-            type: null,
-        },
+            type: null
+        }
     },
     square: {
         control: {
-            type: null,
-        },
-    },
+            type: null
+        }
+    }
 };
 
 Background.args = {
     children: 'Кнопка',
     variant: ButtonVariants.BACKGROUND,
-    size: ButtonSizes.M,
+    size: ButtonSizes.M
 };
 
 export const Background_Inverted = Template.bind({});
@@ -93,20 +115,20 @@ export const Background_Inverted = Template.bind({});
 Background_Inverted.argTypes = {
     variant: {
         control: {
-            type: null,
-        },
+            type: null
+        }
     },
     square: {
         control: {
-            type: null,
-        },
-    },
+            type: null
+        }
+    }
 };
 
 Background_Inverted.args = {
     children: 'Кнопка',
     variant: ButtonVariants.BACKGROUND_INVERTED,
-    size: ButtonSizes.M,
+    size: ButtonSizes.M
 };
 
 export const Square_Size_M = Template.bind({});
@@ -114,26 +136,26 @@ export const Square_Size_M = Template.bind({});
 Square_Size_M.argTypes = {
     children: {
         control: {
-            type: null,
-        },
+            type: null
+        }
     },
     size: {
         control: {
-            type: null,
-        },
+            type: null
+        }
     },
     square: {
         control: {
-            type: null,
-        },
-    },
+            type: null
+        }
+    }
 };
 
 Square_Size_M.args = {
     children: '>',
     variant: ButtonVariants.BACKGROUND_INVERTED,
     size: ButtonSizes.M,
-    square: true,
+    square: true
 };
 
 export const Square_Size_L = Template.bind({});
@@ -141,26 +163,26 @@ export const Square_Size_L = Template.bind({});
 Square_Size_L.argTypes = {
     children: {
         control: {
-            type: null,
-        },
+            type: null
+        }
     },
     size: {
         control: {
-            type: null,
-        },
+            type: null
+        }
     },
     square: {
         control: {
-            type: null,
-        },
-    },
+            type: null
+        }
+    }
 };
 
 Square_Size_L.args = {
     children: '>',
     variant: ButtonVariants.BACKGROUND_INVERTED,
     size: ButtonSizes.L,
-    square: true,
+    square: true
 };
 
 export const Square_Size_Xl = Template.bind({});
@@ -168,24 +190,24 @@ export const Square_Size_Xl = Template.bind({});
 Square_Size_Xl.argTypes = {
     children: {
         control: {
-            type: null,
-        },
+            type: null
+        }
     },
     size: {
         control: {
-            type: null,
-        },
+            type: null
+        }
     },
     square: {
         control: {
-            type: null,
-        },
-    },
+            type: null
+        }
+    }
 };
 
 Square_Size_Xl.args = {
     children: '>',
     variant: ButtonVariants.BACKGROUND_INVERTED,
     size: ButtonSizes.XL,
-    square: true,
+    square: true
 };
